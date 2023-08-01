@@ -2,6 +2,17 @@ const WEATHER_API_BASE_URL = 'https://api.openweathermap.org';
 const WEATHER_API_KEY = 'f23ee9deb4e1a7450f3157c44ed020e1';
 const MAX_DAILY_FORECAST = 5;
 
+const recentLocations = [];
+
+const getLocation = () => {
+    const userLocation = locationInput.value;
+    if (userLocation === '') {
+        setLocationError('Please enter a location');
+    } else {
+        lookupLocation(userLocation);
+    }
+}
+
 // create an array of searched locations
 
 const lookupLocation = (search) => {
@@ -19,6 +30,15 @@ const lookupLocation = (search) => {
             var lat = data[0].lat;
             var lon = data[0].lon;
 
+            const myData = {
+                name: data[0].name,
+                country: data[0].country,
+                lat: data[0].lat,
+                lon: data[0].lon
+            }
+
+            console.log(myData);
+
             // Get the Weather for the cached location
             var apiUrl = `${WEATHER_API_BASE_URL}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${WEATHER_API_KEY}`;
             console.log(apiUrl);
@@ -29,11 +49,14 @@ const lookupLocation = (search) => {
                     console.log(data);
 
                     // Display the Current Weather
+                    displayCurrentWeather(data);
 
                     // Display the 5 Day Forecast
+                    displayWeatherForecast(data);
                 });
         });
 }
+
 
 
 // Add an event handler for the search button
