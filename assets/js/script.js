@@ -80,7 +80,7 @@ const displayWeatherForecast = (weatherData) => {
         const wind = `${dailyForecast.wind_speed}MPH`;
 
         const newForecast = document.createElement('div');
-        newForecast.classList.add('each-forecast-days');
+        newForecast.classList.add('forecast-day');
         newForecast.innerHTML = `<div class="weather-info">
                 <div class="temperature">
                     <span>${temp}</span>
