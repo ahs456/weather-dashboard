@@ -73,7 +73,7 @@ const displayWeatherForecast = (weatherData) => {
     forecastList.innerHTML = '';
 
     for (let i=0; i < MAX_DAILY_FORECAST; i++) {
-        const dailyForecast = dailyData[i]    
+        const dailyForecast = dailyData[i] }  
         //finish
 }
 
