@@ -73,8 +73,30 @@ const displayWeatherForecast = (weatherData) => {
     forecastList.innerHTML = '';
 
     for (let i=0; i < MAX_DAILY_FORECAST; i++) {
-        const dailyForecast = dailyData[i] }  
-        //finish
+        const dailyForecast = dailyData[i];
+        const day = new Date(dailyForecast.dt * 1000).toLocaleDateString('en-GB', {weekday: 'long'});
+        const temp = `${dailyForecast.temp.day}`;
+        const humidity = `${dailyForecast.humidity}%`;
+        const wind = `${dailyForecast.wind_speed}MPH`;
+
+        const newForecast = document.createElement('div');
+        newForecast.classList.add('each-forecast-days');
+        newForecast.innerHTML = `<div class="weather-info">
+                <div class="temperature">
+                    <span>${temp}</span>
+                </div>
+                <div class="date">
+                    <span>${day}</span>
+                </div>
+                <div class="wind">
+                    <span>${wind}</span>
+                </div>
+                <div class="humidity">
+                    <span>${humidity}</span>
+                </div>                   
+            </div>`;
+        forecastList.appendChild(newForecast);
+    }  
 }
 
 // Add an event handler for the search button
