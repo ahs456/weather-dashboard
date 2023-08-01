@@ -54,9 +54,27 @@ const lookupLocation = (search) => {
                     // Display the 5 Day Forecast
                     displayWeatherForecast(data);
                 });
+            displayWeather(myData);
         });
 }
 
+const displayCurrentWeather = (weatherData) => {
+    const currentWeather = weatherData.current;
+    document.getElementById('temp-val').textContent = `${currentWeather.temp}`;
+    document.getElementById('wind-val').textContent = `${currentWeather.wind_speed}MPH`;
+    document.getElementById('uv-index-val').textContent = `${currentWeather.uvi}`;
+    document.getElementById('humidity-val').textContent = `${currentWeather.humidity}%`;
+}
 
+const displayWeatherForecast = (weatherData) => {
+    const dailyData = weatherData.daily;
+    document.getElementById('whole-forecast').style.display = 'block';
+    const forecastList = document.getElementById('each-forecast-days');
+    forecastList.innerHTML = '';
+
+    for (let i=0; i < MAX_DAILY_FORECAST; i++) {
+        const dailyForecast = dailyData[i]    
+        //finish
+}
 
 // Add an event handler for the search button
