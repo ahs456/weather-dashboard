@@ -100,3 +100,4 @@ const displayWeatherForecast = (weatherData) => {
 }
 
 // Add an event handler for the search button
+searchButton.addEventListener('click', getLocation);
