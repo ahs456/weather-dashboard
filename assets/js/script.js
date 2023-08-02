@@ -60,7 +60,7 @@ const lookupLocation = (search) => {
 
 const displayCurrentWeather = (weatherData) => {
     const currentWeather = weatherData.current;
-    document.getElementById('temp-val').textContent = `${currentWeather.temp}`;
+    document.getElementById('temp-val').textContent = `${currentWeather.temp}°`;
     document.getElementById('wind-val').textContent = `${currentWeather.wind_speed}MPH`;
     document.getElementById('uv-index-val').textContent = `${currentWeather.uvi}`;
     document.getElementById('humidity-val').textContent = `${currentWeather.humidity}%`;
@@ -75,9 +75,9 @@ const displayWeatherForecast = (weatherData) => {
     for (let i=0; i < MAX_DAILY_FORECAST; i++) {
         const dailyForecast = dailyData[i];
         const day = new Date(dailyForecast.dt * 1000).toLocaleDateString('en-GB', {weekday: 'long'});
-        const temp = `${dailyForecast.temp.day}`;
+        const temp = `${dailyForecast.temp.day}°`;
         const humidity = `${dailyForecast.humidity}%`;
-        const wind = `${dailyForecast.wind_speed}MPH`;
+        const wind = `${dailyForecast.wind_speed} MPH`;
 
         const newForecast = document.createElement('div');
         newForecast.classList.add('forecast-day');
