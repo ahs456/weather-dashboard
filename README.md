@@ -25,6 +25,9 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
+# Screenshot of deployment
+<img src="/assets/images/92183357-82BF-4BA3-9F5A-805E070D235D_1_201_a.jpeg" alt="deployed website screenshot">
+
 # Link to deployed application
 https://ahs456.github.io/week-6-weather-dashboard/
 
