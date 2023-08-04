@@ -99,18 +99,6 @@ const displayWeatherForecast = (weatherData) => {
     }  
 }
 
-const getWeather = (lat, lon) => {
-    var apiUrl = `${WEATHER_API_BASE_URL}/geo/1.0/direct?q=${search}&limit=5&appid=${WEATHER_API_KEY}`;
-    console.log(apiUrl);
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            displayCurrentWeather(data);
-            displayWeatherForecast(data);
-        })
-}
-
 const displayWeather = (weatherData) => {
     document.getElementById('location-name').textContent = `${weatherData.name}, ${weatherData.country}`;
     getWeather(weatherData.lat, weatherData.lon);
