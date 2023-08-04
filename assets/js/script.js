@@ -101,7 +101,6 @@ const displayWeatherForecast = (weatherData) => {
 
 const displayWeather = (weatherData) => {
     document.getElementById('location-name').textContent = `${weatherData.name}, ${weatherData.country}`;
-    getWeather(weatherData.lat, weatherData.lon);
 }
 
 const locationInput = document.getElementById('enter-location');
