@@ -116,7 +116,7 @@ const displayWeather = (weatherData) => {
     getWeather(weatherData.lat, weatherData.lon);
 }
 
-const locationInput = document.getElementById('location');
+const locationInput = document.getElementById('enter-location');
 const searchButton = document.getElementById('search');
 
 // Add an event handler for the search button
